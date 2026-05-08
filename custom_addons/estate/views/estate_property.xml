@@ -5,6 +5,7 @@
             <field name="model">estate.property</field>
             <field name="arch" type="xml">
                 <search string="Search">
+                    <filter name="Postal Code Is Set" domain="[('postcode', '&gt;', 0)]"/>
                     <field name="name"/>
                     <field name="postcode"/>
                     <field name="date_availability"/>
