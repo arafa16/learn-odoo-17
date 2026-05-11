@@ -32,7 +32,8 @@
 					<header>
 				        <button name="action_sold" type="object" string="Sold" invisible="state=='canceled' or state=='sold' or state=='offer_accepted'"/>
 				        <button name="action_cancel" type="object" string="Cancel" invisible="state=='canceled' or state=='sold' or state=='offer_accepted'" />
-				        <field name="state" widget="statusbar" statusbar_visible="new,offer_received,offer_accepted,sold"/>
+				        <button name="action_send_email" type="object" string="Send Email"/>
+						<field name="state" widget="statusbar" statusbar_visible="new,offer_received,offer_accepted,sold"/>
 				    </header>
 				    <sheet>
 				        <group>
@@ -54,6 +55,7 @@
 				            </group>
 				            <notebook>
 				                <page string="Description">
+									<label for="description" string="Description"/>
 				                    <field name="description"/>
 									<label for="garden_orientation" string="Garden Orientation"/>
 				                    <field name="garden_orientation"/>
