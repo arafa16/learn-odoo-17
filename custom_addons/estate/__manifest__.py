@@ -12,11 +12,12 @@
         'security/ir.model.access.csv',
 
         # templates
-        'data/templates/example_email_template.xml',
+        # 'data/templates/example_email_template.xml',
 
         # views
-        'views/menu.xml',
         'views/estate_property.xml',
+        'views/estate_property_type.xml',
+        'views/menu.xml',
 
         # load initial data
         'data/estate.property.csv',
