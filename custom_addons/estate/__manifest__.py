@@ -17,7 +17,8 @@
         # views
         'views/estate_property.xml',
         'views/estate_property_type.xml',
-        'views/menu.xml',
+        'views/estate_property_offer.xml',
+        'views/menu.xml', # the order position matter!
 
         # load initial data
         'data/estate.property.csv',
