@@ -1,60 +1,34 @@
 <odoo>
   <data>
-    <!-- explicit list view definition -->
-<!--
-    <record model="ir.ui.view" id="learn_cutomization.list">
-      <field name="name">learn_cutomization list</field>
-      <field name="model">learn_cutomization.learn_cutomization</field>
-      <field name="arch" type="xml">
-        <tree>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
-        </tree>
-      </field>
+    <record id="sale_order_form_inherit" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit.client_document</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+              <field name="client_document_number"/>
+            </xpath>
+        </field>
     </record>
--->
-
-    <!-- actions opening views on models -->
-<!--
-    <record model="ir.actions.act_window" id="learn_cutomization.action_window">
-      <field name="name">learn_cutomization window</field>
-      <field name="res_model">learn_cutomization.learn_cutomization</field>
-      <field name="view_mode">tree,form</field>
+    <record id="estate_property_tag_list_inherit" model="ir.ui.view">
+        <field name="name">estate.property.tag.list.inherit</field>
+        <field name="model">estate.property.tag</field>
+        <field name="inherit_id" ref="estate.estate_property_tag_view_tree"/>
+        <field name="arch" type="xml">
+            <field name="color" position="before">
+                <field name="priority" />
+            </field>
+        </field>
     </record>
--->
-
-    <!-- server action to the one above -->
-<!--
-    <record model="ir.actions.server" id="learn_cutomization.action_server">
-      <field name="name">learn_cutomization server</field>
-      <field name="model_id" ref="model_learn_cutomization_learn_cutomization"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
-      </field>
+    <record id="estate_property_tag_form_inherit" model="ir.ui.view">
+        <field name="name">estate.property.tag.inherit.property</field>
+        <field name="model">estate.property.tag</field>
+        <field name="inherit_id" ref="estate.estate_property_tag_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='color']" position="before">
+                <field name="priority" />
+            </xpath>
+        </field>
     </record>
--->
-
-    <!-- Top menu item -->
-<!--
-    <menuitem name="learn_cutomization" id="learn_cutomization.menu_root"/>
--->
-    <!-- menu categories -->
-<!--
-    <menuitem name="Menu 1" id="learn_cutomization.menu_1" parent="learn_cutomization.menu_root"/>
-    <menuitem name="Menu 2" id="learn_cutomization.menu_2" parent="learn_cutomization.menu_root"/>
--->
-    <!-- actions -->
-<!--
-    <menuitem name="List" id="learn_cutomization.menu_1_list" parent="learn_cutomization.menu_1"
-              action="learn_cutomization.action_window"/>
-    <menuitem name="Server to list" id="learn_cutomization" parent="learn_cutomization.menu_2"
-              action="learn_cutomization.action_server"/>
--->
   </data>
 </odoo>
