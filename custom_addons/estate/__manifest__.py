@@ -25,6 +25,9 @@
         'data/estate.property.csv',
 
          # Schedulers
-        'views/schedulers/estate_property_scheduler.xml'
+        'views/schedulers/estate_property_scheduler.xml',
+
+        # Reports
+        'views/reports/output_pdf/estate_property.xml',
     ]
 }
